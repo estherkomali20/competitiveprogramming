@@ -1,51 +1,19 @@
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
+import java.util.Scanner;
 
 public class Solution {
 
-    public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        int[] arr=new int[n];
-        int minIndex=0 ,maxIndex=0;
-        for(int i=0;i<n;i++)
-    {
-    arr[i]=sc.nextInt();
-     if (arr[i] < arr[minIndex]) {
-                minIndex = i;
-            }
-            if (arr[i] > arr[maxIndex]) {
-                maxIndex = i;
-            }
+    static long factorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
         }
-        int temp = arr[minIndex];
-        arr[minIndex] = arr[maxIndex];
-        arr[maxIndex] = temp;
-
-        for (int i = 0; i < n; i++) {
-            System.out.print(arr[i]);
-            if (i < n - 1) {
-                System.out.print(" ");
-            }
-        }
+        return n * factorial(n - 1);
     }
-}        
-    
 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
+        int n = sc.nextInt();
 
-
-
-
-
-
-
-
-
-
-
-
-
+        System.out.println(factorial(n));
+    }
+}
